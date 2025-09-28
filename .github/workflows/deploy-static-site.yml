@@ -21,9 +21,9 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::523584619637:role/erikschmutz-a3-demo-website-oji06xGitHubOIDCRole
+          role-to-assume: arn:aws:iam::523584619637:role/erikschmutz-a3-demo-website-lhetpfGitHubOIDCRole
           aws-region: us-east-1
       - name: Sync to S3
-        run: aws s3 sync dist s3://erikschmutz-a3-demo-website-oji06x-bucket-rv8wl6pxcl6y --delete
+        run: aws s3 sync dist s3://erikschmutz-a3-demo-website-lhetpf-bucket-etqj9syy8b8j --delete
       - name: Invalidate CloudFront
-        run: aws cloudfront create-invalidation --distribution-id E8IP6857630LS --paths '/*'
+        run: aws cloudfront create-invalidation --distribution-id EG96FADA2WO9H --paths '/*'
